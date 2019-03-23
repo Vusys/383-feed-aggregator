@@ -10,3 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+use App\Http\Controllers\PagesController;
+
+Route::get('/', [PagesController::class, 'index'])->name('index');

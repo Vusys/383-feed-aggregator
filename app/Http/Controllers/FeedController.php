@@ -18,4 +18,17 @@ class FeedController extends Controller
             'data'    => $locations,
         ]);
     }
+
+    public function listAggregates(): JsonResponse
+    {
+        $aggregates = FeedAggregate::all()
+            ->map(function (FeedAggregate $feedAggregate) {
+                return $feedAggregate->only(['name', 'slug']);
+            });
+
+        return new JsonResponse([
+            'success' => true,
+            'data'    => $aggregates,
+        ]);
+    }
 }

@@ -14,4 +14,5 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::get('/v1/places/top-places/{feedAggregate}', [FeedController::class, 'aggregate']);
+Route::get('/v1/places/top-places/{feedAggregate}', [FeedController::class, 'aggregate'])->name('api.places.top_places.aggregate');
+Route::get('/v1/aggregates', [FeedController::class, 'listAggregates'])->name('api.aggregates');
