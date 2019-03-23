@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 /**
  * App\Models\Feed
@@ -13,13 +14,13 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Feed newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Feed query()
  * @mixin \Eloquent
- * @property int $id
- * @property string $url
- * @property string $parser
- * @property int $refresh_length Period to wait before refreshing the feed, in seconds
- * @property string|null $last_checked
- * @property \Illuminate\Support\Carbon|null $created_at
- * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property int                                                                       $id
+ * @property string                                                                    $url
+ * @property string                                                                    $parser
+ * @property int                                                                       $refresh_length Period to wait before refreshing the feed, in seconds
+ * @property string|null                                                               $last_checked
+ * @property \Illuminate\Support\Carbon|null                                           $created_at
+ * @property \Illuminate\Support\Carbon|null                                           $updated_at
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Feed whereCreatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Feed whereId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Feed whereLastChecked($value)
@@ -27,6 +28,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Feed whereRefreshLength($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Feed whereUpdatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Feed whereUrl($value)
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Location[] $locations
  */
 class Feed extends Model
 {
@@ -35,5 +37,10 @@ class Feed extends Model
     public function aggregates(): BelongsToMany
     {
         return $this->belongsToMany(FeedAggregate::class);
+    }
+
+    public function locations(): HasMany
+    {
+        return $this->hasMany(Location::class);
     }
 }
