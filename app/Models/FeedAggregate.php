@@ -13,11 +13,11 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\FeedAggregate newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\FeedAggregate query()
  * @mixin \Eloquent
- * @property int $id
- * @property string $name
- * @property string $slug
- * @property \Illuminate\Support\Carbon|null $created_at
- * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property int                                                              $id
+ * @property string                                                           $name
+ * @property string                                                           $slug
+ * @property \Illuminate\Support\Carbon|null                                  $created_at
+ * @property \Illuminate\Support\Carbon|null                                  $updated_at
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\FeedAggregate whereCreatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\FeedAggregate whereId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\FeedAggregate whereName($value)
@@ -31,5 +31,10 @@ class FeedAggregate extends Model
     public function feeds(): BelongsToMany
     {
         return $this->belongsToMany(Feed::class);
+    }
+
+    public function getRouteKeyName(): string
+    {
+        return 'slug';
     }
 }

@@ -8,17 +8,17 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 /**
  * App\Models\Location
  *
- * @property int $id
- * @property int $feed_id
- * @property string $name
- * @property string $description
- * @property string $link
- * @property string $image
- * @property float|null $latitude
- * @property float|null $longitude
+ * @property int                             $id
+ * @property int                             $feed_id
+ * @property string                          $name
+ * @property string                          $description
+ * @property string                          $link
+ * @property string                          $image
+ * @property float|null                      $latitude
+ * @property float|null                      $longitude
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
- * @property-read \App\Models\Feed $feed
+ * @property-read \App\Models\Feed           $feed
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Location newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Location newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Location query()
@@ -37,6 +37,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class Location extends Model
 {
     protected $fillable = ['name', 'description', 'link', 'image', 'latitude', 'longitude'];
+    protected $hidden = ['id', 'feed_id', 'created_at', 'updated_at'];
 
     public function feed(): BelongsTo
     {
