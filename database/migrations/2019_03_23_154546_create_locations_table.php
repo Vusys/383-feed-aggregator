@@ -20,7 +20,7 @@ class CreateLocationsTable extends Migration
             $table->foreign('feed_id')->references('id')->on('feeds');
 
             $table->text('name');
-            $table->text('description');
+            $table->text('description')->nullable();
             $table->text('link');
             $table->text('image');
             $table->float('latitude')->nullable();

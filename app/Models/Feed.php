@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -28,7 +29,8 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Feed whereRefreshLength($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Feed whereUpdatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Feed whereUrl($value)
- * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Location[] $locations
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Location[]      $locations
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Feed needsRefresh()
  */
 class Feed extends Model
 {
@@ -42,5 +44,11 @@ class Feed extends Model
     public function locations(): HasMany
     {
         return $this->hasMany(Location::class);
+    }
+
+    public function scopeNeedsRefresh(Builder $query): Builder
+    {
+        return $query->whereRaw('DATE_SUB(last_checked, INTERVAL refresh_length SECOND) >= last_checked')
+            ->orWhereNull('last_checked');
     }
 }
