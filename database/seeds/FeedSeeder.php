@@ -87,25 +87,8 @@ class FeedSeeder extends Seeder
                 ],
             ],
             [
-                'name'  => 'Worcester, England',
-                'feeds' => [
-                    [
-                        'url'    => 'https://content-api.hiltonapps.com/v1/places/top-places/uk-worcester-fsq?access_token=jobs383-UgWfVvxQXNhDQLw4v',
-                        'parser' => 'foursquare',
-                    ],
-                    [
-                        'url'    => 'https://content-api.hiltonapps.com/v1/places/top-places/uk-worcester-via?access_token=jobs383-UgWfVvxQXNhDQLw4v',
-                        'parser' => 'viator',
-                    ],
-                ],
-            ],
-            [
                 'name'  => 'Rome, Italy',
                 'feeds' => [
-                    [
-                        'url'    => 'https://content-api.hiltonapps.com/v1/places/top-places/it-rome-fsq?access_token=jobs383-UgWfVvxQXNhDQLw4v',
-                        'parser' => 'foursquare',
-                    ],
                     [
                         'url'    => 'https://content-api.hiltonapps.com/v1/places/top-places/it-rome-via?access_token=jobs383-UgWfVvxQXNhDQLw4v',
                         'parser' => 'viator',
@@ -116,10 +99,6 @@ class FeedSeeder extends Seeder
                 'name'  => 'Paris, France',
                 'feeds' => [
                     [
-                        'url'    => 'https://content-api.hiltonapps.com/v1/places/top-places/fr-paris-fsq?access_token=jobs383-UgWfVvxQXNhDQLw4v',
-                        'parser' => 'foursquare',
-                    ],
-                    [
                         'url'    => 'https://content-api.hiltonapps.com/v1/places/top-places/fr-paris-via?access_token=jobs383-UgWfVvxQXNhDQLw4v',
                         'parser' => 'viator',
                     ],
@@ -129,10 +108,6 @@ class FeedSeeder extends Seeder
                 'name'  => 'Berlin, Germany',
                 'feeds' => [
                     [
-                        'url'    => 'https://content-api.hiltonapps.com/v1/places/top-places/de-berlin-fsq?access_token=jobs383-UgWfVvxQXNhDQLw4v',
-                        'parser' => 'foursquare',
-                    ],
-                    [
                         'url'    => 'https://content-api.hiltonapps.com/v1/places/top-places/de-berlin-via?access_token=jobs383-UgWfVvxQXNhDQLw4v',
                         'parser' => 'viator',
                     ],
@@ -141,10 +116,6 @@ class FeedSeeder extends Seeder
             [
                 'name'  => 'Stockholm, Sweden',
                 'feeds' => [
-                    [
-                        'url'    => 'https://content-api.hiltonapps.com/v1/places/top-places/se-stockholm-fsq?access_token=jobs383-UgWfVvxQXNhDQLw4v',
-                        'parser' => 'foursquare',
-                    ],
                     [
                         'url'    => 'https://content-api.hiltonapps.com/v1/places/top-places/se-stockholm-via?access_token=jobs383-UgWfVvxQXNhDQLw4v',
                         'parser' => 'viator',
@@ -168,11 +139,7 @@ class FeedSeeder extends Seeder
                 'name'  => 'Calgary, Canada',
                 'feeds' => [
                     [
-                        'url'    => 'https://content-api.hiltonapps.com/v1/places/top-places/ca-canada-fsq?access_token=jobs383-UgWfVvxQXNhDQLw4v',
-                        'parser' => 'foursquare',
-                    ],
-                    [
-                        'url'    => 'https://content-api.hiltonapps.com/v1/places/top-places/ca-canada-via?access_token=jobs383-UgWfVvxQXNhDQLw4v',
+                        'url'    => 'https://content-api.hiltonapps.com/v1/places/top-places/ca-calgary-via?access_token=jobs383-UgWfVvxQXNhDQLw4v',
                         'parser' => 'viator',
                     ],
                 ],
@@ -181,11 +148,11 @@ class FeedSeeder extends Seeder
                 'name'  => 'Dallas, US',
                 'feeds' => [
                     [
-                        'url'    => 'https://content-api.hiltonapps.com/v1/places/top-places/dallastx-fsq?access_token=jobs383-UgWfVvxQXNhDQLw4v',
+                        'url'    => 'https://content-api.hiltonapps.com/v1/places/top-places/usa-dallastx-fsq?access_token=jobs383-UgWfVvxQXNhDQLw4v',
                         'parser' => 'foursquare',
                     ],
                     [
-                        'url'    => 'https://content-api.hiltonapps.com/v1/places/top-places/dallastx-via?access_token=jobs383-UgWfVvxQXNhDQLw4v',
+                        'url'    => 'https://content-api.hiltonapps.com/v1/places/top-places/usa-dallastx-via?access_token=jobs383-UgWfVvxQXNhDQLw4v',
                         'parser' => 'viator',
                     ],
                 ],
